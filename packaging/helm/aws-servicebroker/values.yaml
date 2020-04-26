@@ -1,13 +1,13 @@
 image: awsservicebroker/aws-servicebroker:beta
 imagePullPolicy: Always
-authenticate: true
+authenticate: false # true
 tls:
   cert:
   key:
 deployClusterServiceBroker: true
 deployNamespacedServiceBroker: false
 aws:
-  region: us-east-1
+  region: eu-central-1
   bucket: awsservicebroker
   key: templates/latest
   s3region: us-east-1
@@ -16,7 +16,7 @@ aws:
   secretkey: ""
   targetaccountid: ""
   targetrolename: ""
-  vpcid: ""
+  vpcid: "awssb"
   existingSecret: ""
   accesskeyidName: "accesskeyid"
   secretkeyName: "secretkey"

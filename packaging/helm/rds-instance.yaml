@@ -1,0 +1,16 @@
+apiVersion: servicecatalog.k8s.io/v1beta1
+kind: ServiceInstance
+metadata:
+  name: rds
+spec:
+  # References one of the previously returned services
+  clusterServiceClassExternalName: rdspostgresql
+  clusterServicePlanExternalName: dev
+  #####
+  # Additional parameters can be added here,
+  # which may be used by the service broker.
+  #####
+  parameters:
+    AccessCidr: '0.0.0.0/0'
+    region: eu-central-1
+    VpcId: vpc-69e20c03
